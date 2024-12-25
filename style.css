@@ -80,8 +80,7 @@ input, textarea{
   .mobile{
     display: none;
   }
-  .nav-box{
-    background-color:transparent;
+  .PcMenu{
     width: 95%;
     height: 5vw;
     display: flex;
@@ -142,22 +141,29 @@ header nav ul li a{
 }
 
 nav ul li a::before{
-    content: '';
-    width: 0%;
-    height: 3px;
-    position: absolute;
-    background-color: var(--bg-color);
-    bottom: 0;
-    transition: var(--transitin);
-    -webkit-transition: var(--transitin);
-    -moz-transition: var(--transitin);
-    -ms-transition: var(--transitin);
-    -o-transition: var(--transitin);
+   content: '';
+   width: 0%;
+   height: 3px;
+   position: absolute;
+   background-color: var(--bg-color);
+   bottom: 0;
+   transition: var(--transitin);
+   -webkit-transition: var(--transitin);
+   -moz-transition: var(--transitin);
+   -ms-transition: var(--transitin);
+   -o-transition: var(--transitin);
+   border-radius:40px ;
+   -webkit-border-radius:40px ;
+   -moz-border-radius:40px ;
+   -ms-border-radius:40px ;
+   -o-border-radius:40px ;
 }
 
 nav ul li a:hover::before{
 width: 100%;
 background-color: #c0e600;
+box-shadow: 0 0px 15px #c0e600, 0 0px 3px #c0e600, 0 0px 20px #c0e600;
+
 }
 nav ul li a:hover{
     color: var(--generalcolor);
@@ -173,11 +179,12 @@ nav ul li a:hover{
 @media (width <= 850px) {
 
     .menu-box{
+        visibility: visible;
         position: absolute;
         width: 50px;
         height: 50px;
         right: 4vw;
-        top: 1vw;
+        top: 3vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -187,6 +194,7 @@ nav ul li a:hover{
         -moz-transition: var(--transitin);
         -ms-transition: var(--transitin);
         -o-transition: var(--transitin);
+
 }
       .menu-icon, .menu-icon::before, .menu-icon::after{
         width: 70%;
@@ -242,23 +250,49 @@ nav ul li a:hover{
         -o-transition: var(--transitin);
     }
 
-    @keyframes identifier {
-        
-    }
-
-
-.nav-box{
+.PcMenu{
     display: none;
 }
 .mobileLogo{
      display: block;
     position: absolute;
     left: 5vw;
-    top: 2vw;
+    top: 3.5vw;
     width: 14vw;
 }
-.mobile{
+
+
+/* ANIMATION FOR MOBILE MENU */
+
+@keyframes comin {
+
+    60%{
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        -o-transform: translateX(-20px);
+        background-color: #adf10d2d;
+}
+
+        90%{
+            background-color: transparent;
+            backdrop-filter: blur(.2rem);
+            border: #c0e600 solid;
+            box-shadow: 0px 20px 20px #c0e60062;
+        }
+        99%{
+            box-shadow: 0px 20px 20px #c0e60017;
+        }
+
+}
+
+.MobileNav{
     display: flex;
+}
+
+.mobile{
+    display: none;
     justify-content: center;
     align-items: center;
     width: 30%;
@@ -274,6 +308,8 @@ nav ul li a:hover{
     -moz-border-radius: 0px 0px 0px 150px;
     -ms-border-radius: 0px 0px 0px 150px;
     -o-border-radius: 0px 0px 0px 150px;
+    animation-duration: .8s;
+    animation-name: comin;
 }
 .mobile li{
     list-style: none;
@@ -307,6 +343,45 @@ background-color: #c0e600;
     color: var(--generalcolor);
 }
 
+:is(.MobileNav:hover, .MobileNav:focus)  .menu-icon{
+    background-color: transparent;
+}
+:is(.MobileNav:hover, .MobileNav:focus)  .menu-icon:before{
+    transform: translateX(-.1px) rotate(-45deg);
+    -webkit-transform: translateX(-.1px) rotate(-45deg);
+    -moz-transform: translateX(-.1px) rotate(-45deg);
+    -ms-transform: translateX(-.1px) rotate(-45deg);
+    -o-transform: translateX(-.1px) rotate(-45deg);
+}
+:is(.MobileNav:hover, .MobileNav:focus)  .menu-icon:after{
+    transform: translateX(.1px) rotate(45deg);
+    -webkit-transform: translateX(.1px) rotate(45deg);
+    -moz-transform: translateX(.1px) rotate(45deg);
+    -ms-transform: translateX(.1px) rotate(45deg);
+    -o-transform: translateX(.1px) rotate(45deg);
+}
+:is(.MobileNav:hover, .MobileNav:focus) .mobile{
+   display: flex;
+}
+:is(.MobileNav:hover, .MobileNav:focus) .mobile{
+   display: flex;
+}
+:is(.MobileNav:hover, .MobileNav:focus) .menu-box{
+   transform: rotate(720deg);
+   -webkit-transform: rotate(720deg);
+   -moz-transform: rotate(720deg);
+   -ms-transform: rotate(720deg);
+   -o-transform: rotate(720deg);
+}
+:is(.MobileNav:hover, .MobileNav:focus) .menu-icon::before{
+background-color: #c0e600;
+box-shadow: 0 0px 3px #c0e600, 0 0px 15px #c0e600, 0 0px 20px #c0e600;
+ }
+:is(.MobileNav:hover, .MobileNav:focus) .menu-icon::after{
+background-color: #c0e600;
+box-shadow: 0 0px 15px #c0e600, 0 0px 3px #c0e600, 0 0px 20px #c0e600;
+ }
+
 }
 
 @media (width <= 650px){
@@ -314,18 +389,31 @@ background-color: #c0e600;
         font-size: 5vw;
     }
 }
+
 @media (width <= 500px){
+    .mobileLogo{
+        top: 5vw;
+}
+
 .mobile{
     height: 75vh;
     gap: 5vw;
     
 }
+
 .mobile li a{
     font-size: 5vw;
 }
+
 }
 
+
+
 @media (width <= 412px){
+    .mobileLogo{
+        top: 6vw;
+}
+
     .mobile{
         width: 40%;
         height: 65%;
@@ -336,6 +424,10 @@ background-color: #c0e600;
     }
 }
 @media (width <= 315px){
+    .mobileLogo{
+        top:7vw;
+}
+
     .mobile{
         width: 45%;
         gap: 10vw;
