@@ -69,7 +69,7 @@ input, textarea{
 
   .Hero1{
     width: 100%;
-    height: 100vh;
+    height: 97vh;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -175,6 +175,148 @@ nav ul li a:hover{
     display: none;
 }
 
+.Heading1{
+    width: 95%;
+    height: 80%;
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+/*     border: #fff solid;
+ */}
+.Heading1 h1{
+    color: var(--text-color);
+    font-size: 9vw;
+    font-family: var(--Pop);
+    font-weight: 100;
+    line-height: 9.5vw;
+    overflow: hidden;
+    position: absolute;
+    top:30px;
+}
+.Brand{
+    font-family: var(--Pop);
+    color: #c0e600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    
+}
+.dot{
+    width: 3vw;
+    height: 3vw;
+    background-color: var(--generalcolor);
+    position: absolute;
+    top:14.5vw;
+    left: 48vw;
+    animation: rotate 2s linear .3s infinite;
+    -webkit-animation: rotate 2s linear .3s infinite;
+}
+.features{
+    position: absolute;
+    width: 25vw;
+    height: 50vh;
+    right: 10vw;
+    top: 20vw;
+}
+.features p{
+    color: #fff;
+    font-size: 2vw;
+    line-height: 4vw;
+    font-weight: 100;
+    cursor: cell;
+}
+
+.action{
+    width: 55vw;
+    height: 25vh;
+    position: absolute;
+    left: 5vw;
+    top: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+.action a{
+    text-decoration: none;
+    color: #fff;
+    width: 70%;
+    text-align: center;
+    padding: 1vw 2vw;
+    border: #fff solid .5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: var(--transitin);
+    -webkit-transition: var(--transitin);
+    -moz-transition: var(--transitin);
+    -ms-transition: var(--transitin);
+    -o-transition: var(--transitin);
+    position: relative;
+    z-index: 1;
+}
+.action a:hover, .action a:focus{
+    border: #ffffff5e solid .5px;
+
+}
+.action a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--generalcolor);
+    z-index: -1;
+    transition: var(--transitin);
+    -webkit-transition: var(--transitin);
+    -moz-transition: var(--transitin);
+    -ms-transition: var(--transitin);
+    -o-transition: var(--transitin);
+}
+.action a:hover::before, .action a:focus::before{
+     width: 100%;
+     animation: btn .5s;
+     -webkit-animation: btn .5s;
+}
+@keyframes btn {
+    0%{
+        background-color: #fff;
+    }
+    70%{
+        background-color: #e7f891;
+    }
+     90%{
+        background-color: #c0e600;
+     }
+}
+
+.action p{
+    color: #fff;
+}
+@keyframes rotate {
+        from{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+}
+    
+}
+
 /* MEDIA QUERIES */
 @media (width <= 850px) {
 
@@ -260,6 +402,8 @@ nav ul li a:hover{
     top: 3.5vw;
     width: 14vw;
 }
+
+
 
 
 /* ANIMATION FOR MOBILE MENU */
