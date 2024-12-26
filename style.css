@@ -24,6 +24,7 @@ display: flex;
 -ms-flex-align: center;
   align-items: center;
   background-image: linear-gradient(#000000, #181f22);
+  margin-bottom: 100px;
 
 
 }
@@ -67,7 +68,10 @@ input, textarea{
 
 
 
+
+
   .Hero1{
+    position: relative;
     width: 100%;
     height: 97vh;
     display: flex;
@@ -75,8 +79,41 @@ input, textarea{
     justify-content: start;
     flex-flow: column wrap;
     background-image: linear-gradient(#000000bd, #3a3a3a00);
-/*     border: #fff solid;
- */  }
+/*      border: #fff solid;
+ */   }
+
+ .achievements{
+    width: 90%;
+    height: 6vw;
+    /*border: #fff solid;
+    */position: absolute;
+    bottom: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 3vw;
+    background-color: transparent;
+    gap: 20px;
+}
+.numbers{
+    flex: 1;
+    height: 90%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: start;
+    justify-content: space-around;
+}
+.numbers h1{
+    color: #fff;
+    font-family: var(--Ral);
+    font-weight: 500;
+}
+.numbers p{
+    color: #fff;
+    font-family: var(--Ral);
+    font-weight: 300;
+    margin-top: -15px;
+}
   .mobile{
     display: none;
   }
@@ -193,7 +230,8 @@ nav ul li a:hover{
     line-height: 9.5vw;
     overflow: hidden;
     position: absolute;
-    top:30px;
+    top:.6vw;
+    left: 2vw;
 }
 .Brand{
     font-family: var(--Pop);
@@ -218,15 +256,29 @@ nav ul li a:hover{
     position: absolute;
     width: 25vw;
     height: 50vh;
-    right: 10vw;
+    right:7vw;
     top: 20vw;
 }
 .features p{
-    color: #fff;
+    color: #c0e600;
     font-size: 2vw;
     line-height: 4vw;
     font-weight: 100;
     cursor: cell;
+    transition: var(--transitin);
+    -webkit-transition: var(--transitin);
+    -moz-transition: var(--transitin);
+    -ms-transition: var(--transitin);
+    -o-transition: var(--transitin);
+}
+.features p:hover, .features p:focus{
+    color: #ffffff;
+    scale: 1.05;
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
 }
 
 .action{
@@ -262,6 +314,7 @@ nav ul li a:hover{
 }
 .action a:hover, .action a:focus{
     border: #ffffff5e solid .5px;
+    color: #000000;
 
 }
 .action a::before{
@@ -317,7 +370,125 @@ nav ul li a:hover{
     
 }
 
+
+
 /* MEDIA QUERIES */
+
+@media (width <=2000px){
+    .Hero1{
+        height: 110vh;
+/*         background-color: green;
+ */    }
+    .Heading1 h1{
+        top: -.5vw;
+    }
+    .features{
+        top: 16vw;
+    }
+    .action{
+        top: 24vw;
+    }
+    .action a{
+        font-size: 1.2vw;
+    }
+    .action p{
+        font-size: 1.05vw;
+    }
+
+}
+
+@media (width <=1700px){
+.Hero1{
+    height: 100vh;
+}
+}
+
+@media (width <=1600px){
+    .Hero1{
+        height: 95vh;
+        
+    }
+}
+
+@media (width <=1500px){
+.Hero1{
+    height: 90vh;
+}
+}
+
+@media (width <=1300px){
+    .Hero1{
+        height: 95vh;
+    }
+    .Heading1{
+        top: 2vw;
+    }
+    .features{
+        height: 4vw;
+        width: 100%;
+        left: 5vw;
+        display: flex;
+        gap: 2vw;
+        flex-flow: row wrap;
+        top: 27vw;
+    }
+    .action{
+        top: 30vw;
+        width: 60%;
+    }
+}
+
+@media (width <=1280px){
+    .Hero1{
+        border: green solid;
+    }
+    .achievements p{
+        margin-top: 0px;
+    }
+}
+
+@media (width <=1200px){
+    .action{
+        height: 7vw;
+        top: 33vw;
+    }
+}
+@media (width <=1140px){
+.Hero1{
+    height: 86vh;
+}
+.action p{
+    font-weight: 300;
+}
+}
+
+@media (width <=1080px){
+    .Hero1{
+        border: white solid;
+        height: 90vh;
+    }
+    .action{
+/*         border: yellow solid;
+ */        height: 23vh;
+        gap: 1vw;
+        width: 50%;
+        flex-flow: row wrap;
+        justify-content: start;
+    }
+    .action p{
+        order: 1;
+        font-size: 1.4vw;
+    }
+    .action a{
+        order: 2;
+        font-size: 1.5vw;
+    }
+}
+
+@media (width <=900px){
+
+}
+
 @media (width <= 850px) {
 
     .menu-box{
